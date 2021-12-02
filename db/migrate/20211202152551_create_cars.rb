@@ -9,6 +9,7 @@ class CreateCars < ActiveRecord::Migration[6.1]
       t.string :image
       t.float :price_for_day
       t.integer :bags_number
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
