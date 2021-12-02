@@ -12,6 +12,14 @@ class V1::CarsController < ApplicationController
   end
 
   def destroy
+    @car = Car.find(params[:id])
+    @car.destroy
+    response = if @car.destroy
+                 { message: 'Car destroyed' }
+               else
+                 { message: "Car didn't delete" }
+               end
+    render json: response
   end
 
   def create
