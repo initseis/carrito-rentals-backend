@@ -24,7 +24,7 @@ class V1::CarsController < ApplicationController
                else
                  { message: "Car didn't save" }
                end
-    json_response(response)
+    render json: response
   end
 
   private
