@@ -3,5 +3,7 @@ Rails.application.routes.draw do
     resources :user
     resources :cars
     resources :rentals
+    post :signin, to: 'auth#create'
+    post :signup, to: 'users#create'
   end
 end

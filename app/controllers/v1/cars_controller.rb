@@ -23,9 +23,7 @@ class V1::CarsController < ApplicationController
   end
 
   def create
-    p car_params
-    # user = current_user
-    car = Car.new(car_params)
+    car = @current_user.cars.create(car_params)
     # car.owner = user
     response = if car.save
                  { car: car }
