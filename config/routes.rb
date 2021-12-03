@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resources :rentals
     post :signin, to: 'auth#create'
     post :signup, to: 'users#create'
+    post :validate, to: 'users#validate'
   end
 end
