@@ -10,6 +10,14 @@ class V1::UsersController < ApplicationController
     end
   end
 
+  def validate
+    if @current_user
+      render json: { auth: true }
+    else
+      render json: { status: :bad, errors: @current_user.errors.messages }
+    end
+  end
+
   private
 
   def user_params
