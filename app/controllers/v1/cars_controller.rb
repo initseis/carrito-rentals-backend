@@ -1,7 +1,6 @@
 class V1::CarsController < ApplicationController
   before_action :all_cars, only: %i[index]
   before_action :set_car, only: %i[show]
-  # before_action :car_params
 
   def index
     render json: @cars
@@ -12,8 +11,7 @@ class V1::CarsController < ApplicationController
   end
 
   def destroy
-    @car = Car.find(params[:id])
-    @car.destroy
+    @car = @current_user.cars.find(params[:id])
     response = if @car.destroy
                  { message: 'Car destroyed' }
                else
@@ -23,10 +21,9 @@ class V1::CarsController < ApplicationController
   end
 
   def create
-    car = @current_user.cars.create(car_params)
-    # car.owner = user
-    response = if car.save
-                 { car: car }
+    @car = @current_user.cars.new(car_params)
+    response = if @car.save
+                 @car
                else
                  { message: "Car didn't save" }
                end
