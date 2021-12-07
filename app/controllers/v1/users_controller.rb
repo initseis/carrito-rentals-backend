@@ -18,7 +18,7 @@ class V1::UsersController < ApplicationController
     end
   end
 
-  def show
+  def mycars
     @car = @current_user.cars
     render json: @car
   end
