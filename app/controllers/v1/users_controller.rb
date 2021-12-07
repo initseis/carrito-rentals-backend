@@ -18,6 +18,11 @@ class V1::UsersController < ApplicationController
     end
   end
 
+  def show
+    @car = @current_user.cars
+    render json: @car
+  end
+
   private
 
   def user_params
