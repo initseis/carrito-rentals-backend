@@ -4,9 +4,9 @@ class V1::UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      render json: user.as_json(json_options)
+      render json: user.as_json(json_options), status: 201
     else
-      render json: { status: :bad, errors: user.errors.messages }
+      render json: { errors: user.errors.messages }, status: 422
     end
   end
 
@@ -26,10 +26,10 @@ class V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username)
+    params.permit(:username)
   end
 
   def json_options
-    { except: %i[created_at updated_at password_digest] }
+    { except: %i[created_at updated_at password_digest id] }
   end
 end

@@ -17,12 +17,11 @@ class V1::RentalsController < ApplicationController
 
   def create
     @rental = @current_user.rentals.new(rental_params)
-    response = if @rental.save
-                 @rental
-               else
-                 { message: "Rental couldn't be saved" }
-               end
-    render json: response
+    if @rental.save
+      render json: @rental, status: 201
+    else
+      render json: { message: "Rental couldn't be saved" }, status: 422
+     end
   end
 
   private
