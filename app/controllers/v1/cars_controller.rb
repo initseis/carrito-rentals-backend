@@ -22,12 +22,11 @@ class V1::CarsController < ApplicationController
 
   def create
     @car = @current_user.cars.new(car_params)
-    response = if @car.save
-                 @car
-               else
-                 { message: "Car didn't save" }
-               end
-    render json: response
+    if @car.save
+      render json: @car, status: 201
+    else
+      render json: { message: "Car couldn't be saved" }, status: 422
+    end
   end
 
   private
