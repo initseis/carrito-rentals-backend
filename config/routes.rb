@@ -8,5 +8,4 @@ Rails.application.routes.draw do
     post :validate, to: 'users#validate'
     get :mycars, to: 'users#mycars'
   end
-  get "/docs", to: 'docs#index'
 end
