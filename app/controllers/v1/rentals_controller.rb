@@ -21,7 +21,7 @@ class V1::RentalsController < ApplicationController
       render json: @rental, status: 201
     else
       render json: { message: "Rental couldn't be saved" }, status: 422
-     end
+    end
   end
 
   private
