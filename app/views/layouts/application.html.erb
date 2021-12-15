@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Carrito Rentals API Documentation</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+    body {background: white;}
+    .main-cont {
+      display: flex;
+      justify-content: baseline;
+      height: 100%;
+      padding: 0;
+      }
+    table, th, td {
+    border: 1px solid black;
+    }
+    div {
+      padding: 10px 0;
+    }
+    .navbar {
+      background: #d3d3d3;
+      border: solid black 2px;
+      padding: 20px;
+      width: 30%;
+      text-decoration: underline;
+    }
+    .content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      background: #f3d3d3;
+      width: 100%;
+
+    }
+    .content-title {
+      width: 100%%;
+      justify-self: center;
+      align-self: center;
+    }
+    .content-starting {
+
+    }
+    .starting-title {
+      text-decoration: underline;
+    }
+    </style>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
