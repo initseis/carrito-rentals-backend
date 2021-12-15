@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module V1
   class AuthController < ApplicationController
     skip_before_action :authenticate!
@@ -14,7 +12,9 @@ module V1
         render json: { error: 'unauthorized' }, status: :forbidden
       end
     end
+
     private
+
     def login_params
       params.permit(:username)
     end

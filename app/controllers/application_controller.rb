@@ -5,9 +5,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  # rubocop:disable Lint/DuplicateBranch
   def authenticate!
     header = request.headers['Authorization']
-    header = header.split(' ').last if header
+    header = header.split.last if header
     begin
       @decoded = JsonWebToken.decode(header)
       @current_user = User.find(@decoded[:user_id])
@@ -17,4 +18,5 @@ class ApplicationController < ActionController::Base
       render json: { errors: e.message }, status: :unauthorized
     end
   end
+  # rubocop:enable Lint/DuplicateBranch
 end
