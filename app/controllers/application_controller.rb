@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   include Response
   include ExceptionHandler
   before_action :authenticate!
+  protect_from_forgery with: :null_session
 
   private
 
