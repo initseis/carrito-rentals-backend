@@ -13,6 +13,8 @@ See our Kanban Board [here](https://github.com/sevinchek/carrito-rentals-backend
 
 This is the [initial state](https://user-images.githubusercontent.com/72412404/144319547-9250a4d7-7617-45bf-866d-e9a336b4fd84.png)
 
+Team members: 4
+
 
 ## API documentation
 
