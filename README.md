@@ -8,6 +8,12 @@ For the frontend we used React.js, you can see more on the [Carrito Rental Front
 
 ![image](./screenshot.png)
 
+## Kanban Board
+See our Kanban Board [here](https://github.com/sevinchek/carrito-rentals-backend/projects/1)
+
+This is the [initial state](https://user-images.githubusercontent.com/72412404/144319547-9250a4d7-7617-45bf-866d-e9a336b4fd84.png)
+
+
 ## API documentation
 
 https://carrito-rentals-backend.herokuapp.com/docs
